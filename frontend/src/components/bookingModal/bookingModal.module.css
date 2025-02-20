@@ -1,0 +1,40 @@
+.bookingForm{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid antiquewhite;
+    background-color: antiquewhite;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.input{
+    width: fit-content;
+    padding: 5px;
+    border: 1px beige;
+    margin: 5px;
+    border-radius: 8px;
+}
+
+.formButton{
+    width: fit-content;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 5px;
+    font-size: 15px;
+    margin: 5px;
+}
+
+.closeButton{
+    width: fit-content;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 5px;
+    font-size: 15px;
+    margin: 5px;
+}

@@ -1,0 +1,117 @@
+.doctorCard {
+  padding: 15px;
+  border-radius: 10px 10px 0px 0px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  height: fit-content;
+}
+
+.doctorImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.doctorName {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.doctorSpecialization,
+.doctorHours {
+  font-size: 14px;
+  color: #333;
+  margin: 5px 0;
+}
+
+.doctorButtonOpen {
+  background-color: green;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.doctorButtonClose{
+  background-color: red;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.doctorButton:hover {
+  background-color: #0056b3;
+}
+
+
+.docCardAndBookingModal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
+
+
+.modal{
+  display: flex;
+  flex-wrap: wrap;
+  background: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+
+.bookingModal {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  background: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+
+}
+
+
+.dateSelection{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.dateButton{
+  background: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
+.slotSelection{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.slotButton{
+  background: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}

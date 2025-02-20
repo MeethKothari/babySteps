@@ -1,0 +1,34 @@
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const mongoose = require("mongoose");
+const doctorRoutes = require("./routes/doctor.routes");
+const appointmentRoutes = require("./routes/appointment.routes");
+
+
+// port and express initialization
+const port = process.env.PORT || 8080;
+const app = express();
+
+
+
+// connect to mongodb
+mongoose.connect(process.env.MONGO_URI)
+.then(() => console.log("connected to mongoDB !!"))
+.catch((err) => console.log(err));
+
+
+
+// middleware
+app.use(cors());
+app.use(express.json());
+app.use("/doctors", doctorRoutes);
+app.use("/appointments", appointmentRoutes);
+
+
+
+
+
+app.listen(port, () => {
+    console.log(`server is running on port ${port}`);
+})
