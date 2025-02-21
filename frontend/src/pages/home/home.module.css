@@ -3,10 +3,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .content{
     padding: 50px;
+    min-height: 100vh;
 }
 
 .title{

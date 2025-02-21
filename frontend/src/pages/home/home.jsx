@@ -26,8 +26,8 @@ const Home = () => {
     <>
       <div className={styles.container}>
       <div className={styles.content}>
-        <h1 className={styles.title}>Book your slot now with two steps easy system.....</h1>
-        <div> {loading === true ? <h2>.....fetching available doctors</h2> : 
+        <h1 className={styles.title}> 👉 Book your slot now with two easy steps 👈</h1>
+        <div> {loading === true ? <h2>fetching available doctors.......</h2> : 
             doctors.map((doctor) => {
               return <DoctorCard doctor = {doctor} key={doctor._id}/>
             })} 

@@ -21,10 +21,9 @@ const DoctorCard = ({ doctor }) => {
 
 
 
- 
   // fetch available slots for the selected date
   const fetchAppointment = async (doctorId, date) => {
-    console.log(date)
+    //console.log(date)
     try{
       const response = await fetch(`${apiUrl}/doctors/${doctorId}/slots?date=${date}`);
       const data = await response.json();
@@ -40,9 +39,12 @@ const DoctorCard = ({ doctor }) => {
       console.log("Error fetching appointments", error)
     }
   }
+  useEffect(() => {
+  },[availableDoctorSlots]);
+  //console.log('availableDoctorSlots', availableDoctorSlots);
+  
   
 
-  //console.log('availableDoctorSlots', availableDoctorSlots);
 
 
 
