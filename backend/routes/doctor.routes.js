@@ -44,6 +44,8 @@ router.get("/:id/slots", async(req, res) => {
 
         // parsing date
         const parsedDate = parseISO(date);
+        //console.log('parsedDate', parsedDate.split("T")[1]); // typeof - object
+        console.log('parsedDate', parsedDate); 
         const start = startOfDay(parsedDate);
         const end = endOfDay(parsedDate);
 
@@ -57,7 +59,7 @@ router.get("/:id/slots", async(req, res) => {
           doctorId: id,
           date: {$gte: start, $lte: end}
         });
-       
+        console.log('existingAppointments', existingAppointments);
        
         // slots that are already booked 
         let existingSlots = existingAppointments.map((appointment) => {

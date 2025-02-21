@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import styles from "./bookings.module.css";
 import apiUrl from "../../ipconfig";
 import Swal from "sweetalert2";
@@ -9,6 +9,8 @@ const Bookings = () => {
   const [allAppointments, setAllAppointments] = useState([]);
 
 
+
+  
   useEffect(() => {
     const fetchAllAppointments = async () => {
       try{
@@ -27,7 +29,7 @@ const Bookings = () => {
   }
 
   fetchAllAppointments();
-  },[allAppointments])
+  },[])
 
 
 
@@ -39,7 +41,7 @@ const handleEdit = () => {
 
 
 // Delete function
-const handleDelete = async(doctorId) => {
+const handleDelete = useCallback( async(doctorId) => {
   //console.log(doctorId)
   try {
     let response = await fetch(`${apiUrl}/appointments/${doctorId}`, {
@@ -50,11 +52,15 @@ const handleDelete = async(doctorId) => {
         icon: "success",
         title: "Appointment deleted successfully",
       })
+      setTimeout(() => {
+        window.location.reload();
+      }, 3000)
+      //fetchAllAppointments();
     }
     else{
       Swal.fire({
         icon: "error",
-        title: "Error deleting appointment",
+        title: "Error deleting appointment, or try to refresh the page",
       })
     }
   } catch (error) {
@@ -64,7 +70,7 @@ const handleDelete = async(doctorId) => {
       title: "Error deleting appointment",
     })
   }
-}
+}, []);
   
 
 function formatDate(date) {
@@ -85,7 +91,7 @@ function formatTime(date) {
     <div className={styles.container}>
       <h1>Bookings</h1>
       
-
+      
       {allAppointments.length > 0 ? allAppointments.map((app, index) => (
         <>
         <div className={styles.doctorCard} key={index}>
@@ -121,7 +127,7 @@ function formatTime(date) {
         </>
         )) 
         : 
-        <h1>Fetching your appointments.....</h1>}
+        <h1>No upcoming appointments.....</h1>}
   
     </div>
   )

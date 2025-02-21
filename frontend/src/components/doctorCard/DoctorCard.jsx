@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import styles from "./doctorCard.module.css";
 import apiUrl from "../../ipconfig";
 import BookingModal from "../bookingModal/BookingModal";
@@ -22,7 +22,7 @@ const DoctorCard = ({ doctor }) => {
 
 
   // fetch available slots for the selected date
-  const fetchAppointment = async (doctorId, date) => {
+  const fetchAppointment = useCallback( async (doctorId, date) => {
     //console.log(date)
     try{
       const response = await fetch(`${apiUrl}/doctors/${doctorId}/slots?date=${date}`);
@@ -38,9 +38,10 @@ const DoctorCard = ({ doctor }) => {
     catch (error){
       console.log("Error fetching appointments", error)
     }
-  }
+  }, []) 
+
   useEffect(() => {
-  },[availableDoctorSlots]);
+  },[]);
   //console.log('availableDoctorSlots', availableDoctorSlots);
   
   
