@@ -20,18 +20,19 @@ mongoose.connect(process.env.MONGO_URI)
 
 
 // CORS Middleware
-const corsOptions = {
-    origin: [ // Frontend URL
-        "http://localhost:5173",  // local development url
-        "https://baby-steps-woad.vercel.app/", // vercel provided url
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-};
+// const corsOptions = {
+//     origin: [ // Frontend URL
+//         "http://localhost:5173",  // local development url
+//         "https://baby-steps-woad.vercel.app/", // vercel provided url
+//     ],
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     allowedHeaders: ["Content-Type", "Authorization"],
+// };
 
 
 // middleware
-app.use(cors(corsOptions));
+//app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use("/doctors", doctorRoutes);
 app.use("/appointments", appointmentRoutes);
