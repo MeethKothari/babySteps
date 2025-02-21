@@ -71,6 +71,16 @@ function formatDate(date) {
   return format(new Date(date), "MM/dd/yyyy");
 }
 
+function formatTime(date) {
+  return format(new Date(date), "hh:mm a");
+  // if (time > "12:00 AM"){
+  //   return time + "PM";
+  // }
+  // else{
+  //   return time + "AM";
+  // }
+}
+
   return (
     <div className={styles.container}>
       <h1>Bookings</h1>
@@ -94,7 +104,7 @@ function formatDate(date) {
             </p>
 
             <p className={styles.dateAndTime}>
-              <strong>Date and Time:</strong> {formatDate(app.date)}
+              <strong>Date and Time:</strong> {formatDate(app.date)} - {formatTime(app.date)}
             </p>
           </section>
 

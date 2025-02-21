@@ -45,7 +45,7 @@ const BookingModal = ({details, toggleModal, toggleSlotModal}) => {
         Swal.fire({
           icon: "success",
           title: "Booking Successful",
-          text: "Your appointment has been booked successfully"
+          text: "Your appointment has been booked successfully, check bookings section for more details"
         })
         toggleModal(null);
         toggleSlotModal(false);

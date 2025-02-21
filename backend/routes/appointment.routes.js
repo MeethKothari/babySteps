@@ -103,7 +103,8 @@ router.delete("/:id", async(req, res) => {
         else{
             return res.status(200).send(appointment);
         }
-    } catch (error) {
+    } 
+    catch (error) {
         return res.status(500).send({
             message: error.message
         })

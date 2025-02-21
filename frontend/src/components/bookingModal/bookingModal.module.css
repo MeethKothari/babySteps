@@ -25,6 +25,7 @@
     padding: 5px;
     font-size: 15px;
     margin: 5px;
+    transition: all 0.3s ease-in-out;
 }
 
 .closeButton{
@@ -37,4 +38,15 @@
     padding: 5px;
     font-size: 15px;
     margin: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.formButton:hover{
+    background-color: rgb(4, 92, 4);
+    scale: 1.1;
+}
+
+.closeButton:hover{
+    background-color: rgb(165, 4, 4);
+    scale: 1.1;
 }
